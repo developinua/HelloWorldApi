@@ -1,3 +1,4 @@
+using HelloWorldApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,6 +11,8 @@ namespace HelloWorldApi
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IHelloWorldService, HelloWorldInMemoryListService>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
