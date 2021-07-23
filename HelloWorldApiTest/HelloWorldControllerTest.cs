@@ -1,20 +1,18 @@
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using HelloWorldApi;
 using HelloWorldApi.Models;
-using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json;
 using Shouldly;
 using Xunit;
 
 namespace HelloWorldApiTest
 {
-    public class HelloWorldControllerTest : IClassFixture<WebApplicationFactory<Startup>>
+    public class HelloWorldControllerTest : IClassFixture<WebApiTestFactory>
     {
         private readonly HttpClient _client;
 
-        public HelloWorldControllerTest(WebApplicationFactory<Startup> factory)
+        public HelloWorldControllerTest(WebApiTestFactory factory)
         {
             _client = factory.CreateClient();
         }

@@ -13,7 +13,8 @@ namespace HelloWorldApi
         {
             services.AddTransient<IHelloWorldService, HelloWorldInMemoryListService>();
 
-            services.AddControllers();
+            services.AddControllers()
+                .AddNewtonsoftJson();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "HelloWorldApi", Version = "v1" });

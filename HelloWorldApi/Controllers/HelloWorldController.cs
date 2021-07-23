@@ -24,7 +24,7 @@ namespace HelloWorldApi.Controllers
             List<string> helloWorlds = _helloWorldService.GetHelloWorlds().ToList();
             int randomPosition = new Random().Next(0, helloWorlds.Count);
 
-            return new()
+            return new HelloWorldResponse
             {
                 Text = helloWorlds[randomPosition]
             };
